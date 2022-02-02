@@ -152,17 +152,29 @@ calc_rmse_cluster <- function(
 
   if(var == 'temp'){
     rmse <- preds_obs %>%
-      group_by(cluster, model, percent_trn_data) %>%
+      group_by(seg_id_nat, cluster, model, percent_trn_data) %>%
       summarise(rmse = sqrt(mean((temp_pred-temp_obs)^2,na.rm=T)),
                 bias = mean(temp_pred-temp_obs, na.rm=T),
                 n_obs_test = sum(!is.na(temp_obs)),
+                .groups = 'drop') %>%
+      group_by(cluster, model, percent_trn_data) %>%
+      summarise(mean_rmse = mean(rmse, na.rm=T),
+                sd_rmse = sd(rmse, na.rm = T),
+                mean_n_obs_test = mean(n_obs_test),
+                sd_n_obs_test = sd(n_obs_test),
                 .groups = 'drop')
   }else{
     rmse <- preds_obs %>%
-      group_by(cluster, model, percent_trn_data) %>%
+      group_by(seg_id_nat, cluster, model, percent_trn_data) %>%
       summarise(rmse = sqrt(mean((flow_pred-flow_obs)^2,na.rm=T)),
                 bias = mean(flow_pred-flow_obs, na.rm=T),
                 n_obs_test = sum(!is.na(flow_obs)),
+                .groups = 'drop') %>%
+      group_by(cluster, model, percent_trn_data) %>%
+      summarise(mean_rmse = mean(rmse, na.rm=T),
+                sd_rmse = sd(rmse, na.rm = T),
+                mean_n_obs_test = mean(n_obs_test),
+                sd_n_obs_test = sd(n_obs_test),
                 .groups = 'drop')
   }
 

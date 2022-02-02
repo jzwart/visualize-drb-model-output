@@ -157,6 +157,30 @@ targets_list <- list(
     format = "file"
   ),
 
+  # RMSE comparison between MTHGN and HGN on all the 456 segments
+  tar_target(
+    figure_temp_rmse_map_compare,
+    plot_rmse_map(
+      rmse_file = temp_rmse_by_segment,
+      shapefile = drb_shapefile,
+      min_n_obs = 0,
+      lab = expression("RMSE ("*~degree*C*")"),
+      out_file = 'out/temp_rmse_map_compare.png'
+    ),
+    format = "file"
+  ),
+
+  tar_target(
+    figure_flow_rmse_map_compare,
+    plot_rmse_map(
+      rmse_file = flow_rmse_by_segment,
+      shapefile = drb_shapefile,
+      min_n_obs = 0,
+      out_file = 'out/flow_rmse_map_compare.png'
+    ),
+    format = "file"
+  ),
+
   # Clustering results: we did a clustering over 456 segments, and we wish to
   #  see how the clustering over segments looks like. The cluster labels are
   #  included in the "Clustering " folder. Each file is a 456 vector, where
@@ -197,6 +221,39 @@ targets_list <- list(
       cluster_file = 'in/Clustering/cluster_10_streamflow.npy',
       seg_ids = seg_id_nats,
       out_file = 'out/flow_rmse_cluster_10.csv'
+    ),
+    format = "file"
+  ),
+
+  tar_target(
+    figure_temp_rmse_cluster_5,
+    plot_rmse_scatter(
+      rmse_file = temp_rmse_by_cluster_5,
+      min_n_obs = 0,
+      ylab = expression("RMSE ("*~degree*C*")"),
+      out_file = "out/temp_rmse_cluster_5_scatter.png"
+    ),
+    format = "file"
+  ),
+
+  tar_target(
+    figure_temp_rmse_cluster_10,
+    plot_rmse_scatter(
+      rmse_file = temp_rmse_by_cluster_10,
+      min_n_obs = 0,
+      ylab = expression("RMSE ("*~degree*C*")"),
+      out_file = "out/temp_rmse_cluster_10_scatter.png"
+    ),
+    format = "file"
+  ),
+
+  tar_target(
+    figure_flow_rmse_cluster_10,
+    plot_rmse_scatter(
+      rmse_file = flow_rmse_by_cluster_10,
+      min_n_obs = 0,
+      ylab = expression(RMSE~(m^{3}~sec^{-1})),
+      out_file = "out/flow_rmse_cluster_10_scatter.png"
     ),
     format = "file"
   )
