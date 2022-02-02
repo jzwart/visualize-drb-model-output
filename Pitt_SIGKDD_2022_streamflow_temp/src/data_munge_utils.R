@@ -130,7 +130,7 @@ calc_rmse <- function(
                 .groups = 'drop')
   }
 
-  saveRDS(rmse, out_file)
+  write_csv(rmse, out_file)
   return(out_file)
 }
 
@@ -166,7 +166,7 @@ calc_rmse_cluster <- function(
                 .groups = 'drop')
   }
 
-  saveRDS(rmse, out_file)
+  write_csv(rmse, out_file)
   return(out_file)
 }
 

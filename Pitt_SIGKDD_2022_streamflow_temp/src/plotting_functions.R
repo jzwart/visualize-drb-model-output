@@ -77,7 +77,7 @@ plot_rmse_density <- function(
   out_file
 ){
 
-  rmse <- readRDS(rmse_file) %>%
+  rmse <- read_csv(rmse_file) %>%
     filter(n_obs_test >= min_n_obs) %>%
     mutate(percent_trn_data = as.character(percent_trn_data))
 

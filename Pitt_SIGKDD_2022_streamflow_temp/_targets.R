@@ -117,7 +117,7 @@ targets_list <- list(
     calc_rmse(
       in_file = temp_preds_obs,
       var = 'temp',
-      out_file = "out/temperature_rmse_segment.rds"
+      out_file = "out/temperature_rmse_segment.csv"
     ),
     format = "file"
   ),
@@ -127,7 +127,7 @@ targets_list <- list(
     calc_rmse(
       in_file = flow_preds_obs,
       var = 'flow',
-      out_file = "out/flow_rmse_segment.rds"
+      out_file = "out/flow_rmse_segment.csv"
     ),
     format = "file"
   ),
@@ -172,7 +172,7 @@ targets_list <- list(
       var = 'temp',
       cluster_file = 'in/Clustering/cluster_5_temperature.npy',
       seg_ids = seg_id_nats,
-      out_file = 'out/temperature_rmse_cluster_5.rds'
+      out_file = 'out/temperature_rmse_cluster_5.csv'
     ),
     format = "file"
   ),
@@ -184,7 +184,7 @@ targets_list <- list(
       var = 'temp',
       cluster_file = 'in/Clustering/cluster_10_temperature.npy',
       seg_ids = seg_id_nats,
-      out_file = 'out/temperature_rmse_cluster_10.rds'
+      out_file = 'out/temperature_rmse_cluster_10.csv'
     ),
     format = "file"
   ),
@@ -196,7 +196,7 @@ targets_list <- list(
       var = 'temp',
       cluster_file = 'in/Clustering/cluster_10_streamflow.npy',
       seg_ids = seg_id_nats,
-      out_file = 'out/flow_rmse_cluster_10.rds'
+      out_file = 'out/flow_rmse_cluster_10.csv'
     ),
     format = "file"
   )
