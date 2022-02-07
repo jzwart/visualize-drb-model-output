@@ -12,20 +12,21 @@ figure_temp_rmse_density|stem|e5137462ce4b5620|4fc692ec828a03cf|671a8f41096a9af1
 temp_rmse_by_cluster_5|stem|fdf7d2cd94fb32ce|506832f030968449|a2840f6bd1e26fd9|1907261363|out/temperature_rmse_cluster_5.csv|t19025.8572714331s|a6c7013caea1c03a|2623|file|vector|||8.46||
 figure_temp_rmse_cluster_scatter|stem|21ddccec20a52102|41e58f932357754b|90eec9adeaa80966|-2092359045|out/temp_rmse_cluster_5_scatter.png|t19025.8656547928s|2122babc2a63f7bb|66715|file|vector|||1.8|Ignoring unknown parameters width, height|
 temp_rmse_by_cluster_10|stem|d4cdab5e1e8ca015|33768aa5718714e8|a2840f6bd1e26fd9|106210894|out/temperature_rmse_cluster_10.csv|t19025.8672623169s|cc120fb989daa6db|5003|file|vector|||10.4||
-flow_rmse_by_cluster_10|stem|3765d1410ccccdd4|f5b615e01e487548|a2840f6bd1e26fd9|2042530817|out/flow_rmse_cluster_10.csv|t19025.8673555638s|3f8de8c1965f6ab2|5102|file|vector|||8.03||
 figure_temp_rmse_cluster_10|stem|41ed54256c64d0fe|9da3c1651b1d0f15|8748b5a2814c2e13|-935649001|out/temp_rmse_cluster_10_scatter.png|t19025.8678959521s|0469b468c8abc9ad|55736|file|vector|||1.83|Ignoring unknown parameters width, height|
 figure_temp_rmse_cluster_5|stem|3ba1fc3cd471a77d|41e58f932357754b|dad55c1e6b593235|-1473739630|out/temp_rmse_cluster_5_scatter.png|t19025.8678998414s|a84140b9d82ddd04|47902|file|vector|||0.33|Ignoring unknown parameters width, height|
-figure_flow_rmse_cluster_10|stem|96d4784c0e848459|c743b061e7ed2613|508b8f175acfbc93|935979770|out/flow_rmse_cluster_10_scatter.png|t19025.8679041316s|0773a7b5632de2d9|58290|file|vector|||0.36|Ignoring unknown parameters width, height|
 figure_rmse_map_compare|stem||bc707baedcf81383|17f7c39a245ea93f|715270659||t19025.8805541147s||0|file|vector|||17.06||could not find function pivot
+figure_flow_rmse_map_compare|stem|dde2da86fc0dd43d|154c6ce2627fb03b|a0b37874520a2b19|92196475|out/flow_rmse_map_compare.png|t19025.9065707961s|905bdffad46587bf|101050|file|vector|||4||
+figure_temp_rmse_map_compare|stem|f5fbbe1180fb4604|4022dc92c8d21c78|d7900f0922ba3d25|1191185809|out/temp_rmse_map_compare.png|t19025.9078502693s|136e46859f8f53cb|106127|file|vector|||3.96||
+flow_rmse_by_cluster_10|stem|eba4846e51370b41|78700a01ab01b4b7|b2dae562bd098d1b|2042530817|out/flow_rmse_cluster_10.csv|t19030.7806027964s|d10e294b02ac8b39|5074|file|vector|||11.56||
 DOCKER_PAT|object|bee6d99ada41a7b5||||||||||||||
 GITLAB_PAT|object|dc85329a24ca3f3c||||||||||||||
-figure_flow_rmse_map_compare|stem|dde2da86fc0dd43d|154c6ce2627fb03b|a0b37874520a2b19|92196475|out/flow_rmse_map_compare.png|t19025.9065707961s|905bdffad46587bf|101050|file|vector|||4||
+figure_flow_rmse_cluster_10|stem|eff90423ac9392e4|14c6eaa694b52f0b|f8b759968aa039cf|935979770|out/flow_rmse_cluster_10_scatter.png|t19030.7842640094s|cbd3f54bcdf0f4af|57196|file|vector|||1.97|Ignoring unknown parameters width, height|
 plot_drb_map|function|2102c3893eaa6eb1||||||||||||||
 np|object|fa33cc1920dfc4b5||||||||||||||
 get_relative_path|function|7c8721279b8afdcf||||||||||||||
 plot_rmse_scatter|function|200125cb41940577||||||||||||||
-.Random.seed|object|fa5d10c31e1f047b||||||||||||||
-targets_list|object|fb6f3d8a693acb46||||||||||||||
+.Random.seed|object|af0cfd5a9ee010dc||||||||||||||
+targets_list|object|f1cdd5daf26506c3||||||||||||||
 plot_rmse_map|function|6edffcafe3759d18||||||||||||||
 calc_rmse|function|8fed6134671e68a5||||||||||||||
 plot_rmse_density|function|c4b93e2875e1a7ed||||||||||||||
@@ -34,4 +35,3 @@ combine_temp_preds_obs|function|2de56a471e86ef67||||||||||||||
 combine_flow_preds_obs|function|e324573c0718fc57||||||||||||||
 gd_locate_file|function|a4568a396dafc041||||||||||||||
 gd_get|function|01479659659aa16c||||||||||||||
-figure_temp_rmse_map_compare|stem|f5fbbe1180fb4604|4022dc92c8d21c78|d7900f0922ba3d25|1191185809|out/temp_rmse_map_compare.png|t19025.9078502693s|136e46859f8f53cb|106127|file|vector|||3.96||

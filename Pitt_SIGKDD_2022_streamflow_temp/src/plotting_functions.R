@@ -246,7 +246,6 @@ plot_rmse_scatter <- function(
   log_y_axis = F,
   out_file
 ){
-
   rmse <- read_csv(rmse_file) %>%
     filter(mean_n_obs_test >= min_n_obs) %>%
     mutate(percent_trn_data = as.character(percent_trn_data),

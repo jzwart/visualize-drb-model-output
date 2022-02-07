@@ -216,8 +216,8 @@ targets_list <- list(
   tar_target(
     flow_rmse_by_cluster_10,
     calc_rmse_cluster(
-      in_file = temp_preds_obs,
-      var = 'temp',
+      in_file = flow_preds_obs,
+      var = 'flow',
       cluster_file = 'in/Clustering/cluster_10_streamflow.npy',
       seg_ids = seg_id_nats,
       out_file = 'out/flow_rmse_cluster_10.csv'
@@ -253,6 +253,7 @@ targets_list <- list(
       rmse_file = flow_rmse_by_cluster_10,
       min_n_obs = 0,
       ylab = expression(RMSE~(m^{3}~sec^{-1})),
+      log_y_axis = T,
       out_file = "out/flow_rmse_cluster_10_scatter.png"
     ),
     format = "file"
