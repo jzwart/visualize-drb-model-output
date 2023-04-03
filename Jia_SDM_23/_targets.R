@@ -6,6 +6,8 @@ options(tidyverse.quiet = TRUE,
 # set package needs
 tar_option_set(packages = c("arrow",
                             "dataRetrieval",
+                            "ggspatial",
+                            "sf",
                             "tidyverse",
                             "reticulate",
                             "reticulate"))
@@ -73,6 +75,16 @@ list(
       sbtools::item_file_download("5f6a285d82ce38aaa244912e",
                                   dest_dir = "Data/in") %>%
         .[grep('reaches.shp', .)] # only grabbing stream reach shapefile
+    },
+    format = "file"
+  ),
+
+  tar_target(
+    drb_res_shapefile,{
+      #  sbtools can now handle facets
+      sbtools::item_file_download("5f6a285d82ce38aaa244912e",
+                                  dest_dir = "Data/in") %>%
+        .[grep('reservoirs.shp', .)] # only grabbing stream reach shapefile
     },
     format = "file"
   ),
@@ -147,6 +159,36 @@ list(
       #rmse_lims = c(0, 4),
       xlab = expression("RMSE ("*~degree*C*")"),
       out_file = "figures/fig_simulation_rmse_density.png"),
+    format = "file"
+  ),
+
+  # Is it possible to also visualize the distribution of errors/ error difference
+  #  in a map (showing reservoirs as well)?
+  tar_target(
+    figure_error_spatial_distribution,
+    plot_rmse_map(
+      rmse_file = temp_rmse_by_segment,
+      shapefile = drb_shapefile,
+      res_shapefile = drb_res_shapefile,
+      seg_id_nats = seg_id_nat,
+      min_n_obs = 2,
+      lab = expression("RMSE ("*~degree*C*")"),
+      out_file = "figures/fig_temp_rmse_map.png"
+    ),
+    format = "file"
+  ),
+
+  tar_target(
+    figure_error_simulation_spatial_distribution,
+    plot_rmse_simulation_map(
+      rmse_file = temp_rmse_by_segment,
+      shapefile = drb_shapefile,
+      res_shapefile = drb_res_shapefile,
+      seg_id_nats = seg_id_nat,
+      min_n_obs = 2,
+      lab = expression("RMSE ("*~degree*C*")"),
+      out_file = "figures/fig_simulation_rmse_map.png"
+    ),
     format = "file"
   )
 
